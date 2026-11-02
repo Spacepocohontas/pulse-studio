@@ -1,0 +1,47 @@
+:root {
+  --bg: #050508;
+  --panel: #0c0c12;
+  --panel2: #12121a;
+  --border: #1e1e2a;
+  --accent: #a78bfa;
+  --accent2: #f472b6;
+  --text: #e8e6f0;
+  --muted: #8b8798;
+  --danger: #f87171;
+  --ok: #34d399;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; overflow: hidden; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background: var(--panel2);
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+button:hover { background: #1a1a26; border-color: #2a2a3a; }
+button:active { transform: scale(0.98); }
+button.primary {
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  border: none;
+  font-weight: 600;
+}
+button.primary:hover { filter: brightness(1.1); }
+button.danger { border-color: #7f1d1d; color: var(--danger); }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+input[type="file"] { display: none; }
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+textarea { resize: vertical; min-height: 72px; width: 100%; background: var(--panel); }
+
+.scroll { overflow: auto; scrollbar-width: thin; scrollbar-color: #2a2a3a transparent; }
